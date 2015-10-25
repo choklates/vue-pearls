@@ -4,22 +4,28 @@
   <meta charset="UTF-8">
   <title>Pearls</title>
   <link rel="stylesheet" href="dist/main.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display:700">
 </head>
 <body>
   <div id="app">
-    <div class="quote-box">
-      <h2 class="quote">{{ quote }}</h2>
-      <h3 class="author">{{ author }}</h3>
-      <button class="button" v-on:click="shuffle">
-        <span class="fa fa-refresh"></span>
-      </button>
-      <button class="button" v-on:click="previous">
-        <span class="fa fa-arrow-left"></span>
-      </button>
-      <button class="button" v-on:click="next">
-        <span class="fa fa-arrow-right"></span>
-      </button>
+    <div class="quote-box _buffer _block-center _text-center">
+      <h2 class="quote _buffer">{{ quote }}</h2>
+      <p class="author _buffer">{{ author }}</p>
+      <div class="buttons _buffer">
+        <button class="button -icon" v-on:click="shuffle">
+          <span class="fa fa-random"></span>
+        </button>
+        <button class="button -icon" v-on:click="previous">
+          <span class="fa fa-arrow-left"></span>
+        </button>
+        <button class="button -icon" v-on:click="next">
+          <span class="fa fa-arrow-right"></span>
+        </button>
+        <a href="https://github.com/choklates/vue-pearls" class="button -icon">
+          <span class="fa fa-github-alt"></span>
+        </a>
+      </div>
     </div>
   </div>
 

@@ -1,5 +1,5 @@
 {
-  "name": "src",
+  "name": "vue-pearls",
   "version": "1.0.0",
   "description": "Trying out gulp, browserify, and vue",
   "main": "app.js",
@@ -20,5 +20,13 @@
   },
   "dependencies": {
     "vue": "^0.12.16"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/choklates/vue-pearls.git"
+  },
+  "bugs": {
+    "url": "https://github.com/choklates/vue-pearls/issues"
+  },
+  "homepage": "https://github.com/choklates/vue-pearls#readme"
 }

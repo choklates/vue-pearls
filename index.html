@@ -4,12 +4,23 @@
   <meta charset="UTF-8">
   <title>Pearls</title>
   <link rel="stylesheet" href="dist/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
 </head>
 <body>
   <div id="app">
-    <ul>
-      <li v-for="quote in quotes">{{ quote.text }}</li>
-    </ul>
+    <div class="quote-box">
+      <h2 class="quote">{{ quote }}</h2>
+      <h3 class="author">{{ author }}</h3>
+      <button class="button" v-on:click="shuffle">
+        <span class="fa fa-refresh"></span>
+      </button>
+      <button class="button" v-on:click="previous">
+        <span class="fa fa-arrow-left"></span>
+      </button>
+      <button class="button" v-on:click="next">
+        <span class="fa fa-arrow-right"></span>
+      </button>
+    </div>
   </div>
 
   <script src="dist/app.js"></script>

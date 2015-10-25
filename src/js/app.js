@@ -6,15 +6,33 @@ var app = new Vue({
   el: '#app',
 
   data: {
-    quotes: []
+    quotes: [],
+    index: 0,
+    loaded: false
+  },
+
+  computed: {
+    quote: function() {
+      if (this.loaded) {
+        return this.quotes[this.index].text;
+      }
+    },
+    author: function() {
+      if (this.loaded) {
+        return this.quotes[this.index].author;
+      }
+    }
   },
 
   created: function() {
-    this.getData('data.json', this.handleSuccess, this.handleError);
+    this._getData('data.json', this._handleSuccess, this._handleError);
   },
 
   methods: {
-    getData: function(path, success, error) {
+    _getRandomNum: function(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    },
+    _getData: function(path, success, error) {
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -30,11 +48,22 @@ var app = new Vue({
       xhr.open("GET", path, true);
       xhr.send();
     },
-    handleSuccess: function(data) {
+    _handleSuccess: function(data) {
       this.quotes = data;
+      this.loaded = true;
+      this.shuffle();
     },
-    handleError: function(xhr) {
+    _handleError: function(xhr) {
       console.log(xhr);
+    },
+    shuffle: function() {
+      this.index = this._getRandomNum(0, this.quotes.length - 1);
+    },
+    previous: function() {
+      this.index = (this.index === 0) ? this.quotes.length - 1 : this.index - 1;
+    },
+    next: function() {
+      this.index = (this.index === this.quotes.length - 1) ? 0 : this.index + 1;
     }
   }
 });

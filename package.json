@@ -2,23 +2,23 @@
   "name": "vue-pearls",
   "version": "1.0.0",
   "description": "Trying out gulp, browserify, and vue",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "gulp build",
+    "start": "node server.js"
   },
   "author": "Victor Hoang",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "browser-sync": "^2.9.11",
     "browserify": "^11.2.0",
+    "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-sass": "^2.0.4",
     "gulp-uglify": "^1.4.2",
     "gulp-watch": "^4.3.5",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
-  },
-  "dependencies": {
+    "vinyl-source-stream": "^1.1.0",
     "vue": "^1.0.0-rc.2"
   },
   "repository": {
@@ -28,5 +28,9 @@
   "bugs": {
     "url": "https://github.com/choklates/vue-pearls/issues"
   },
-  "homepage": "https://github.com/choklates/vue-pearls#readme"
+  "homepage": "https://github.com/choklates/vue-pearls#readme",
+  "engines": {
+    "node": "4.2.1",
+    "npm": "3.3.8"
+  }
 }

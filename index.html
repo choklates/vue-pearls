@@ -7,9 +7,11 @@
 </head>
 <body>
   <div id="app">
-    {{ message }}
+    <ul>
+      <li v-for="quote in quotes">{{ quote.text }}</li>
+    </ul>
   </div>
 
-  <script src="dist/app.min.js"></script>
+  <script src="dist/app.js"></script>
 </body>
 </html>

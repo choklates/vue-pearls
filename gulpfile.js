@@ -62,7 +62,7 @@ gulp.task('bs', function() {
 gulp.task('watch', ['bs'], function() {
   gulp.watch('src/css/**/*.+(scss|sass)', ['sass']);
   gulp.watch('src/**/*.js', ['browserify']);
-  gulp.watch('src/js./app.js', bs.reload);
+  gulp.watch('src/js/app.js', bs.reload);
   gulp.watch('src/index.html', bs.reload);
 });
 

@@ -24,7 +24,7 @@ var app = new Vue({
     }
   },
 
-  created: function() {
+  ready: function() {
     this._getData('data.json', this._handleSuccess, this._handleError);
   },
 
@@ -49,7 +49,7 @@ var app = new Vue({
       xhr.send();
     },
     _handleSuccess: function(data) {
-      this.quotes = data;
+      this.$set('quotes', data);
       this.loaded = true;
       this.shuffle();
     },

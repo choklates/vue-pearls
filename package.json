@@ -19,7 +19,7 @@
     "gulp-watch": "^4.3.5",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "vue": "^1.0.0-rc.2"
+    "vue": "^1.0.0"
   },
   "repository": {
     "type": "git",

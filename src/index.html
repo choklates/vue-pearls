@@ -11,8 +11,6 @@
 <body>
   <div id="app" v-cloak>
     <div class="quote-box _buffer _block-center _text-center">
-      <h2 class="quote _buffer">{{ quote }}</h2>
-      <p class="author _buffer">{{ author }}</p>
       <div class="buttons _buffer">
         <button class="button -icon" v-on:click="shuffle">
           <span class="fa fa-random"></span>
@@ -27,6 +25,8 @@
           <span class="fa fa-github-alt"></span>
         </a>
       </div>
+      <h2 class="quote _buffer">{{ quote }}</h2>
+      <p class="author _buffer">{{ author }}</p>
     </div>
   </div>
 
